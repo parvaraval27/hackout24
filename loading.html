@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Portal</title>
+    <link rel="stylesheet" href="loading.css">
+</head>
+<body>
+
+    <!-- Loading screen with local video background -->
+    
+    <div id="loading-screen">
+        <div class="video-background">
+            <video autoplay muted loop>
+                <source src="1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="loading-text">
+            <h1>WELCOME TO SPACE MINORS</h1>
+        </div>
+        <div class="solar-system">
+            <div class="sun"></div>
+            <div class="orbit orbit-1">
+                <div class="dot dot-1"></div>
+            </div>
+            <div class="orbit orbit-2">
+                <div class="dot dot-2"></div>
+            </div>
+            <div class="orbit orbit-3">
+                <div class="dot dot-3"></div>
+            </div>
+            <div class="orbit orbit-4">
+                <div class="dot dot-4"></div>
+            </div>
+            <div class="orbit orbit-5">
+                <div class="dot dot-5"></div>
+            </div>
+            <div class="orbit orbit-6">
+                <div class="dot dot-6"></div>
+            </div>
+        </div>
+        <div class="loading-line">
+            <div class="loading-progress"></div>
+        </div>
+        
+    <!-- Space-themed loading bar -->
+    <br><br><br><br><br><br><br><br>
+<div class="space-loading-bar">
+    <div class="space-loading-progress"></div>
+</div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 7000); // 2000 milliseconds = 2 seconds
+        });
+        setTimeout(function() {
+    // Hide the loading screen
+    document.getElementById("loading-screen").style.display = "none";
+
+    // Show the login/signup page
+    document.getElementById("content").style.display = "block";
+}, 7000); // 3 seconds loading delay
+
+// Toggle signup form
+document.getElementById("signup-link").addEventListener("click", function() {
+    document.getElementById("login-form").style.display = "none";
+    document.getElementById("signup-form").style.display = "block";
+});
+
+// Handle login form submission
+document.getElementById("login-btn").addEventListener("click", function(event) {
+    event.preventDefault();
+    // TO DO: Implement login logic here
+    console.log("Login button clicked!");
+});
+
+// Handle signup form submission
+document.getElementById("signup-btn").addEventListener("click", function(event) {
+    event.preventDefault();
+    // TO DO: Implement signup logic
+    console.log("Signup button clicked!");
+});
+    </script>
+</body>
+</html>

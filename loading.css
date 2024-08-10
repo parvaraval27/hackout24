@@ -1,0 +1,316 @@
+/* Reset margin and padding for html and body */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Styles for the loading screen with local video background */
+#loading-screen {
+    position: fixed;
+    width: 100vw; /* Ensure it covers the entire viewport width */
+    height: 100vh; /* Ensure it covers the entire viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 9999;
+    flex-direction: column;
+}
+
+/* Ensure video background covers the entire container */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ensure it covers the entire viewport width */
+    height: 100vh; /* Ensure it covers the entire viewport height */
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw; /* Ensure it covers the entire viewport width */
+    height: 100vh; /* Ensure it covers the entire viewport height */
+    object-fit: cover; /* Ensures the video covers the entire container */
+    transform: translate(-50%, -50%);
+}
+
+/* Loading text styling */
+.loading-text {
+    color: #e0e0e0; /* Light color for contrast */
+    font-size: 3em; /* Larger font size for prominence */
+    font-family: 'Orbitron', sans-serif; /* Space-themed font */
+    text-shadow: 
+        0 0 15px #ffffff, /* Outer white glow */
+        0 0 30px #00bfff, /* Light blue glow */
+        0 0 45px #0000ff, /* Blue glow */
+        0 0 60px #00008b; /* Dark blue glow */
+    animation: fadeIn 3s ease-in-out infinite;
+    text-align: justify;
+    margin: 0;
+    transform: translate(0%, -100%);
+}
+
+@keyframes fadeIn {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Solar system container */
+.solar-system {
+    position: absolute;
+    width: 400px; /* Adjust size to fit all circles */
+    height: 400px; /* Adjust size to fit all circles */
+}
+
+/* Sun styling */
+.sun {
+    width: 60px; /* Diameter of the sun */
+    height: 60px; /* Diameter of the sun */
+    background: radial-gradient(circle, #ffcc00 0%, #ff9900 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    animation: sunPulse 3s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Orbit styling */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.orbit-1 {
+    width: 80px;
+    height: 80px;
+}
+
+.orbit-2 {
+    width: 110px;
+    height: 110px;
+}
+
+.orbit-3 {
+    width: 160px;
+    height: 160px;
+}
+
+.orbit-4 {
+    width: 220px;
+    height: 220px;
+}
+
+.orbit-5 {
+    width: 270px;
+    height: 270px;
+}
+
+.orbit-6 {
+    width: 320px;
+    height: 320px;
+}
+
+/* Dot styling with gradients */
+.dot {
+    position: absolute;
+    width: 16px; /* Size of the dot */
+    height: 16px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    top: 50%;
+    left: 50%;
+    transform-origin: 0px -50%;
+}
+
+.dot-1 {
+    background: radial-gradient(circle, #f4a460 0%, #d2691e 100%); /* Mars */
+    animation: orbit-1 5s linear infinite;
+    transform: rotate(0deg) translateX(40px) rotate(-360deg); /* Start position */
+}
+
+.dot-2 {
+    background: radial-gradient(circle, #add8e6 0%, #87ceeb 100%); /* Earth */
+    animation: orbit-2 7s linear infinite;
+    transform: rotate(0deg) translateX(55px) rotate(0deg); /* Start position */
+}
+
+.dot-3 {
+    background: radial-gradient(circle, #f5deb3 0%, #deb887 100%); /* Mercury */
+    animation: orbit-3 9s linear infinite;
+    transform: rotate(0deg) translateX(80px) rotate(0deg); /* Start position */
+}
+
+.dot-4 {
+    background: radial-gradient(circle, #c0c0c0 0%, #a9a9a9 100%); /* Moon */
+    animation: orbit-4 11s linear infinite;
+    transform: rotate(0deg) translateX(110px) rotate(0deg); /* Start position */
+}
+
+.dot-5 {
+    background: radial-gradient(circle, #ff6347 0%, #ff4500 100%); /* Venus */
+    animation: orbit-5 13s linear infinite;
+    transform: rotate(0deg) translateX(135px) rotate(0deg); /* Start position */
+}
+
+.dot-6 {
+    background: radial-gradient(circle, #b0e0e6 0%, #5f9ea0 100%); /* Neptune */
+    animation: orbit-6 15s linear infinite;
+    transform: rotate(0deg) translateX(160px) rotate(0deg); /* Start position */
+}
+
+/* Keyframe animations to revolve the dots around the sun */
+@keyframes orbit-1 {
+    from {
+        transform: rotate(0deg) translateX(40px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(40px) rotate(0deg);
+    }
+}
+
+@keyframes orbit-2 {
+    from {
+        transform: rotate(0deg) translateX(55px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(55px) rotate(0deg);
+    }
+}
+
+@keyframes orbit-3 {
+    from {
+        transform: rotate(0deg) translateX(80px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(80px) rotate(0deg);
+    }
+}
+
+@keyframes orbit-4 {
+    from {
+        transform: rotate(0deg) translateX(110px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(110px) rotate(0deg);
+    }
+}
+
+@keyframes orbit-5 {
+    from {
+        transform: rotate(0deg) translateX(135px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(135px) rotate(0deg);
+    }
+}
+
+@keyframes orbit-6 {
+    from {
+        transform: rotate(0deg) translateX(160px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(160px) rotate(0deg);
+    }
+}
+
+/* Space-themed loading bar container styling */
+.space-loading-bar {
+    position: relative;
+    width: 300px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 25%, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0.5) 75%);
+    border-radius: 10px;
+    border: 2px solid #00bfff; /* Space blue border color */
+    overflow: hidden;
+    margin-top: 30px;
+    position: relative;
+}
+
+/* Space-themed loading progress styling */
+.space-loading-progress {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.8), rgba(0, 0, 255, 0.8));
+    border-radius: 10px;
+    transform: translateX(-100%);
+    animation: spaceLoading 7s linear forwards; /* 7 seconds loading animation */
+}
+
+/* Keyframes for the space-themed loading bar animation */
+@keyframes spaceLoading {
+    to {
+        transform: translateX(0%);
+    }
+}
+
+
+/* Centered login page */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Form content styling */
+.form-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    margin: 20px 0;
+}
