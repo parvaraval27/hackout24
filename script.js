@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const newsContainer = document.getElementById('news-container');
-    const apiKey = 'a0f92f1800cfeece3b3cc7f4e9c6c1ff'; // Replace with your actual API key
+    const apiKey = '92cbb6df61ab44e9a040fb3c8e26d458';
     
     // API endpoint for space news
     const apiUrl = `https://gnews.io/api/v4/top-headlines?category=science&lang=en&apikey=${apiKey}`;
